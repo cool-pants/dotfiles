@@ -1,0 +1,137 @@
+window:
+  dimensions:
+    columns: 100
+    lines: 85
+
+  padding:
+    x: 10
+    y: 10
+
+  dynamic-padding: false
+
+  decorations: full
+
+  startup_mode: Maximized
+
+  title: Alacritty
+
+scrolling:
+  history: 1
+
+  multiplier: 8
+
+font:
+
+  normal:
+    family: "mononoki Nerd Font Mono"
+    style: Regular
+
+  bold:
+    family: "mononoki Nerd Font Mono"
+    style: Bold
+
+  italic:
+    family: "mononoki Nerd Font Mono"
+    style: Italic
+
+  bold_italic:
+    family: "mononoki Nerd Font Mono"
+    style: Bold Italic
+
+  size: 14.0
+
+  offset:
+    x: 1
+    y: 0
+
+  glyph_offset:
+    x: 0
+    y: 0
+
+
+background_opacity: 0.9
+
+live_config_reload: true
+
+schemes:
+  # Tokyo Night theme, based on both:
+  #   https://github.com/ghifarit53/tokyonight-vim
+  #   https://github.com/enkia/tokyo-night-vscode-theme
+  tokyo-night: &tokyo-night
+    # Default colors
+    primary:
+      background: '0x1a1b26'
+      foreground: '0xa9b1d6'
+
+    # Normal colors
+    normal:
+      black:   '0x32344a'
+      red:     '0xf7768e'
+      green:   '0x9ece6a'
+      yellow:  '0xe0af68'
+      blue:    '0x7aa2f7'
+      magenta: '0xad8ee6'
+      cyan:    '0x449dab'
+      white:   '0x787c99'
+
+    # Bright colors
+    bright:
+      black:   '0x444b6a'
+      red:     '0xff7a93'
+      green:   '0xb9f27c'
+      yellow:  '0xff9e64'
+      blue:    '0x7da6ff'
+      magenta: '0xbb9af7'
+      cyan:    '0x0db9d7'
+      white:   '0xacb0d0'
+
+  tokyo-night-storm: &tokyo-night-storm
+    # Default colors
+    primary:
+      background: '0x24283b'
+      foreground: '0xa9b1d6'
+
+    # Normal colors
+    normal:
+      black:   '0x32344a'
+      red:     '0xf7768e'
+      green:   '0x9ece6a'
+      yellow:  '0xe0af68'
+      blue:    '0x7aa2f7'
+      magenta: '0xad8ee6'
+      cyan:    '0x449dab'
+      white:   '0x9699a8'
+
+    # Bright colors
+    bright:
+      black:   '0x444b6a'
+      red:     '0xff7a93'
+      green:   '0xb9f27c'
+      yellow:  '0xff9e64'
+      blue:    '0x7da6ff'
+      magenta: '0xbb9af7'
+      cyan:    '0x0db9d7'
+      white:   '0xacb0d0'
+
+colors: *tokyo-night
+
+dynamic_title: true
+
+cursor:
+  style: Block
+
+  unfocused_hollow: true
+
+shell:
+  program: pwsh
+
+key_bindings:
+  - { key: V,      mods: Control|Shift,  action: Paste            }
+  - { key: C,      mods: Control|Shift,  action: Copy             }
+  - { key: Insert, mods: Shift,          action: PasteSelection   }
+  - { key: N,      mods: Control|Shift,  action: SpawnNewInstance }
+
+  - { key: PageUp,   mods: Shift, action: ScrollPageUp,   mode: ~Alt }
+  - { key: PageDown, mods: Shift, action: ScrollPageDown, mode: ~Alt }
+  - { key: Home,     mods: Shift, action: ScrollToTop,   mode: ~Alt }
+  - { key: End,      mods: Shift, action: ScrollToBottom, mode: ~Alt }

@@ -1,0 +1,13 @@
+window:
+  dimensions:
+    columns: 100
+    lines: 50
+
+  padding:
+    x: 5
+    y: 5
+
+live_config_reload: true
+
+shell:
+  program: pwsh
