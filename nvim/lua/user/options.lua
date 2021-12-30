@@ -32,8 +32,13 @@ local options = {
   wrap = false,                            -- display lines as one long line
   scrolloff = 8,                           -- is one of my fav
   sidescrolloff = 8,
-  guifont = "mononoki:h17",               -- the font used in graphical neovim applications
+  guifont = "mononoki NF:h17",               -- the font used in graphical neovim applications
 }
+
+--vim.cmd [[ let g:neovide_no_idle=v:true ]]
+-- vim.g.neovide_fullscreen = true
+vim.cmd [[ let g:neovide_input_use_logo=v:true ]]
+--vim.cmd [[ let neovide_remember_window_size=v:true ]]
 
 vim.opt.shortmess:append "c"
 

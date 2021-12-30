@@ -6,6 +6,9 @@ local keybinds = require("lua.user.keybindings")
 
 local shell_path = "C:/Program Files/WindowsApps/Microsoft.PowerShell_7.2.1.0_x64__8wekyb3d8bbwe/pwsh.exe"
 
+local font_face = "mononoki NF"
+local test_font_face = "Cascadia Mono"
+
 function basename(s)
   return string.gsub(s, "(.*[/\\])(.*)","%2")
 end
@@ -30,7 +33,9 @@ local config = {
   default_cursor_style = "SteadyBlock",
 
   -- font face
-  font = wezterm.font("mononoki NF"),
+  
+
+  font = wezterm.font(font_face),
   
   -- Color Scheme
   -- color_scheme = "Tokyo Night",
@@ -68,9 +73,9 @@ local config = {
     foreground = "#A9B1D6",
     background = "#24283B",
 
-    cursor_bg = "#191C29",
+    cursor_bg = "#C5CFFA",
     cursor_fg = "#8187A3",
-    cursor_border = "#191C29",
+    cursor_border = "white",
 
     selection_fg = "white",
     selection_bg = "#D9FCFB",

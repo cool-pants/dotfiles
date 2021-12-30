@@ -25,7 +25,7 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
-keymap("n", "<leader>e", ":Lex 30<CR>", opts)
+keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 
 -- Resize with arrow keys
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
@@ -69,3 +69,6 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
 keymap("n", "<leader>d", "<cmd>Telescope lsp_definitions<cr>", opts)
+
+-- Neovide Fullscreen toggle
+keymap("n", "<leader>nf", "<cmd>let g:neovide_fullscreen=!g:neovide_fullscreen", opts)

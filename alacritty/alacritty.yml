@@ -23,7 +23,7 @@ scrolling:
 font:
 
   normal:
-    family: "mononoki Nerd Font Mono"
+    family: "mononoki NF"
     style: Regular
 
   bold:
