@@ -1,3 +1,7 @@
+--vim.cmd([[
+--  set shell = pwsh
+--]])
+
 require "user.options"
 require "user.keymaps"
 require "user.plugins"
@@ -17,3 +21,4 @@ require "user.whichkey"
 require "user.persistence"
 require "user.indentline"
 require "user.alpha"
+require "user.toggleterm"

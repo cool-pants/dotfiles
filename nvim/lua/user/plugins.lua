@@ -112,6 +112,9 @@ return packer.startup(function(use)
   use "goolord/alpha-nvim"
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
 
+  -- Terminal in Neovim
+  use "akinsho/toggleterm.nvim"
+
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end

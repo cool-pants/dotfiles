@@ -38,7 +38,7 @@ local options = {
 --vim.cmd [[ let g:neovide_no_idle=v:true ]]
 -- vim.g.neovide_fullscreen = true
 vim.cmd [[ let g:neovide_input_use_logo=v:true ]]
---vim.cmd [[ let neovide_remember_window_size=v:true ]]
+vim.cmd [[ let neovide_remember_window_size=v:true ]]
 
 vim.opt.shortmess:append "c"
 
