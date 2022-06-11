@@ -3,6 +3,8 @@ Import-Module posh-git
 Import-Module oh-my-posh
 
 # Load Prompt Config
+# Your PowerShell $PROFILE
+$env:VIRTUAL_ENV_DISABLE_PROMPT=1
 function Get-ScriptDirectory{ Split-Path $MyInvocation.ScriptName }
 $PROMPT_CONFIG = Join-Path (Get-ScriptDirectory) 'coolpants.omp.json'
 oh-my-posh --init --shell pwsh --config $PROMPT_CONFIG | Invoke-Expression

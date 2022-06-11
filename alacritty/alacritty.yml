@@ -13,29 +13,31 @@ window:
 
   startup_mode: Maximized
 
+  opacity: 0.9
+
   title: Alacritty
 
 scrolling:
-  history: 1
+  history: 10000
 
   multiplier: 8
 
 font:
 
   normal:
-    family: "mononoki NF"
+    family: "JetBrainsMono Nerd Font Mono"
     style: Regular
 
   bold:
-    family: "mononoki Nerd Font Mono"
+    family: "JetBrainsMono Nerd Font Mono"
     style: Bold
 
   italic:
-    family: "mononoki Nerd Font Mono"
+    family: "JetBrainsMono Nerd Font Mono"
     style: Italic
 
   bold_italic:
-    family: "mononoki Nerd Font Mono"
+    family: "JetBrainsMono Nerd Font Mono"
     style: Bold Italic
 
   size: 14.0
@@ -48,8 +50,6 @@ font:
     x: 0
     y: 0
 
-
-background_opacity: 0.9
 
 live_config_reload: true
 
@@ -123,7 +123,7 @@ cursor:
   unfocused_hollow: true
 
 shell:
-  program: pwsh
+  program: "C:\\Windows\\System32\\wsl.exe"
 
 key_bindings:
   - { key: V,      mods: Control|Shift,  action: Paste            }

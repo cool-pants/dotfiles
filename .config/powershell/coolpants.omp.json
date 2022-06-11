@@ -8,182 +8,100 @@
       "alignment": "left",
       "segments": [
         {
-          "type": "shell",
-          "style": "diamond",
-          "leading_diamond": "╭─",
-          "trailing_diamond": "",
-          "foreground": "#ffffff",
-          "background": "#0077c2",
-          "properties": {
-          }
-        },
-        {
           "type": "root",
-          "style": "diamond",
+          "style": "plain",
           "leading_diamond": "",
-	  "trailing_diamond":"",
-          "foreground": "#000000",
-          "background": "#FFFB38",
+	        "trailing_diamond":"",
+          "foreground": "#e6e93d",
           "properties": {
-            "root_icon": "",
-            "prefix": "<parentBackground>\uE0B0</> "
-          }
-        },
-	{
-          "type": "wifi",
-          "style": "powerline",
-          "background": "#8822ee",
-          "foreground": "#222222",
-          "background_templates": [
-                  "{{ if (not .Connected) }}#FF1111{{ end }}",
-                  "{{ if (lt .Signal 60) }}#DDDD11{{ else if (lt .Signal 90) }}#DD6611{{ else }}#11CC11{{ end }}"
-          ],
-          "powerline_symbol": "\uE0B0",
-          "properties": {
-                  "template": "{{ if .Connected }}\uFAA8{{ else }}\uFAA9{{ end }} {{ if .Connected }}{{ .SSID }} {{ .Signal }}% {{ .ReceiveRate }}Mbps{{ else }}{{ .State }}{{ end }}"
+            "root_icon": " <#fff>=></>"
           }
         },
         {
           "type": "path",
-          "style": "powerline",
-          "powerline_symbol": "\uE0B0",
-          "foreground": "#E4E4E4",
-          "background": "#444444",
+          "style": "plain",
+          "foreground": "#52d9f7",
           "properties": {
-            "style": "full",
-            "enable_hyperlink": true
+            "prefix": "",
+            "style": "folder",
+            "enable_hyperlink": true,
+            "template": "{{ .Path }}"
           }
         },
         {
           "type": "git",
           "style": "powerline",
-          "powerline_symbol": "\uE0B0",
-          "foreground": "#011627",
-          "background": "#FFFB38",
-          "background_templates": [
+          "foreground": "#cb45f0",
+          "foreground_templates": [
             "{{ if or (.Working.Changed) (.Staging.Changed) }}#ffeb95{{ end }}",
             "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#c5e478{{ end }}",
             "{{ if gt .Ahead 0 }}#C792EA{{ end }}",
             "{{ if gt .Behind 0 }}#C792EA{{ end }}"
           ],
           "properties": {
+            "prefix": "",
             "branch_icon": "\ue725 ",
             "fetch_status": true,
-	    "fetch_status_count": true,
+	          "fetch_status_count": true,
             "fetch_upstream_icon": true,
-            "template": "{{ .UpstreamIcon }}{{ .HEAD }}{{ .BranchStatus }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }}"
-	  }
-	}
-      ]
-    },
-    {
-      "type": "prompt",
-      "alignment": "right",
-      "segments": [
+            "template": "<#fff>on {{ .UpstreamIcon }}</>{{ .HEAD }}{{ .BranchStatus }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }}"
+          }
+        },
         {
           "type": "node",
-          "style": "diamond",
-          "leading_diamond": " \uE0B6",
-          "trailing_diamond": "\uE0B4",
+          "style": "plain",
           "foreground": "#6CA35E",
-          "background": "#1B1B1B",
           "properties": {
-            "prefix": " ",
+            "prefix": "",
             "postfix": "",
             "display_package_manager": true,
             "yarn_icon": " <#348cba></>",
-            "npm_icon": " <#cc3a3a></> "
-          }
-        },
-	{
-          "type": "go",
-          "style": "diamond",
-          "leading_diamond": " \uE0B6",
-          "trailing_diamond": "\uE0B4",
-          "foreground": "#79D4FD",
-          "background": "#1B1B1B",
-          "properties": {
-            "prefix": " ",
-            "postfix": ""
-          }
-        },
-	{
-          "type": "python",
-          "style": "diamond",
-          "leading_diamond": " \uE0B6",
-          "trailing_diamond": "\uE0B4",
-          "foreground": "#FDDA4D",
-          "background": "#1B1B1B",
-          "properties": {
-            "prefix": " ",
-            "postfix": ""
+            "npm_icon": " <#cc3a3a></> ",
+            "template": "<#fff>via</>  {{.Full}}{{ if .PackageManagerIcon }}{{ .PackageManagerIcon }}{{ end }}"
           }
         },
         {
-          "background": "#1B1B1B",
+          "type": "go",
+          "style": "diamond",
+          "foreground": "#79D4FD",
+          "properties": {
+            "prefix": "",
+            "postfix": "",
+            "template": "<#fff>via</>  {{.Full}}"
+          }
+        },
+        {
+          "type": "python",
+          "style": "diamond",
+          "foreground": "#FDDA4D",
+          "properties": {
+            "prefix": "",
+            "postfix": "",
+            "template": "<#fff>via</>  {{.Full}}"
+          }
+        },
+        {
           "foreground": "#4063D8",
-          "leading_diamond": " \uE0B6",
-          "trailing_diamond": "\uE0B4",
-	  "properties": {
+          "properties": {
             "display_version": true,
-            "prefix": "  "
+            "prefix": "",
+            "postfix": "",
+            "template": "<#fff>via</>  {{.Full}}"
           },
           "style": "diamond",
           "type": "julia"
         },
         {
-          "background": "#1B1B1B",
           "foreground": "#AE1401",
-          "leading_diamond": " \uE0B6",
-          "trailing_diamond": "\uE0B4",
-	  "properties": {
-		  "display_mode": "files",
-		  "display_version": true,
-		  "prefix": "  "
+          "properties": {
+            "display_mode": "files",
+            "display_version": true,
+            "prefix": "",
+            "postfix": "",
+            "template": "<#fff>via</>  {{.Full}}"
           },
           "style": "diamond",
           "type": "ruby"
-        },
-        {
-          "background": "#1B1B1B",
-          "foreground": "#FEAC19",
-	  "leading_diamond": " \uE0B6",
-          "trailing_diamond": "\uE0B4",
-          "properties": {
-            "display_mode": "files",
-            "display_version": false,
-            "prefix": " "
-          },
-          "style": "diamond",
-          "type": "azfunc"
-        },
-        {
-          "background_templates": [
-            "{{if contains \"default\" .Profile}}#FFA400{{end}}",
-            "{{if contains \"jan\" .Profile}}#f1184c{{end}}"
-          ],
-          "foreground": "#1B1B1B",
-	  "leading_diamond": " \uE0B6",
-          "trailing_diamond": "\uE0B4",
-          "properties": {
-            "display_default": false,
-            "prefix": "  "
-          },
-          "style": "diamond",
-          "type": "aws"
-        },
-	{
-          "type": "time",
-          "style": "diamond",
-          "invert_powerline": true,
-          "leading_diamond": " \uE0B6",
-          "trailing_diamond": "\uE0B4",
-          "background": "#40c4ff",
-          "foreground": "#ffffff",
-          "properties": {
-            "prefix": " \uf5ef ",
-            "postfix": " "
-	  }
         }
       ]
     },
@@ -193,21 +111,11 @@
       "newline": true,
       "segments": [
         {
-          "type": "text",
-          "style": "plain",
-          "foreground": "#0077c2",
-          "properties": {
-            "prefix": "",
-            "postfix": "",
-            "text": "╰─"
-          }
-        },
-        {
           "type": "exit",
           "style": "plain",
-          "foreground": "#e0f8ff",
+          "foreground": "#1bf129",
           "properties": {
-            "prefix": "\u276F",
+            "prefix": " >",
             "display_exit_code": false,
             "always_enabled": true,
             "error_color": "#ef5350"
