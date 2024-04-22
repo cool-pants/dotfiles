@@ -1,0 +1,6 @@
+[includeIf "gitdir:/home/mainak/affinsys/"]
+    path = /home/mainak/.gitconfig.work
+[includeIf "gitdir:/home/mainak/personal/"]
+    path = /home/mainak/.gitconfig.personal
+[init]
+	defaultBranch = main

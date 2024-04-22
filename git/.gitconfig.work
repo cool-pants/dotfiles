@@ -1,0 +1,9 @@
+[user]
+	name = mainak
+	email = mainak.sengupta@affinsys.com
+
+[default]
+	branchName = main
+
+[core]
+	sshCommand = /usr/bin/ssh -i /home/mainak/.ssh/affinsys

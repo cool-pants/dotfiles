@@ -1,0 +1,9 @@
+[user]
+	name = cool-pants
+	email = muban.sg@gmail.com
+
+[default]
+	branchName = main
+
+[core]
+	sshCommand = /usr/bin/ssh -i /home/mainak/.ssh/personal
