@@ -1,0 +1,12 @@
+mkcd() {
+  mkdir $1 && cd $1
+}
+
+# git
+ginit() {
+  git init && git remote add origin $1 && git pull origin
+}
+
+gref() {
+  git fetch origin main && git rebase origin/main
+}

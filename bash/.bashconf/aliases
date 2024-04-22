@@ -1,0 +1,17 @@
+# basic
+alias cls='clear'
+alias lla='ls -al'
+alias vi='nvim'
+alias emacs='nvim'
+alias vim='nvim'
+alias nano='nvim'
+alias e='nvim'
+
+# git
+alias g='git'
+alias gr='git remote'
+alias gra='gr add'
+
+# kubernetes
+alias k='kubectl'
+

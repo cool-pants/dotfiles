@@ -1,0 +1,3 @@
+GO_PATH=$HOME/go/bin
+RUST_PATH=$HOME/.cargo/bin
+PATH=$PATH:$GO_PATH:$RUST_PATH
