@@ -11,6 +11,7 @@ alias e='nvim'
 alias g='git'
 alias gr='git remote'
 alias gra='gr add'
+alias gpo='git pull origin'
 
 # kubernetes
 alias k='kubectl'
