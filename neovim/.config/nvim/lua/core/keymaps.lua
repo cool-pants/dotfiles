@@ -41,3 +41,5 @@ vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper win
 
 vim.keymap.set("n", "<C-a>", "ggVG")
 vim.keymap.set("n", "<C-S>", ":w<CR>")
+
+vim.api.nvim_create_user_command('Conf', 'edit $HOME/.config/nvim/init.lua', {bang = true})
