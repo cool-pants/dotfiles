@@ -1,3 +1,7 @@
+PERSONAL=$HOME/personal
+WORK=$HOME/affinsys
+
+
 GO_PATH=$HOME/go/bin
 JAVA_HOME=$HOME/personal/builds/jdk-22.0.1/bin
 RUST_PATH=$HOME/.cargo/bin
