@@ -6,12 +6,16 @@ alias emacs='nvim'
 alias vim='nvim'
 alias nano='nvim'
 alias e='nvim'
+alias pyac='source $(pwd)/venv/bin/activate'
 
 # git
 alias g='git'
 alias gr='git remote'
 alias gra='gr add'
 alias gpo='git pull origin'
+alias gs='git status'
+alias gc='git commit'
+alias grb='git rebase'
 
 # kubernetes
 alias k='kubectl'
