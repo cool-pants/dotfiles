@@ -29,6 +29,10 @@ vim.keymap.set("n", "<left>", '<cmd>echo "Use h to move!!"<CR>')
 vim.keymap.set("n", "<right>", '<cmd>echo "Use l to move!!"<CR>')
 vim.keymap.set("n", "<up>", '<cmd>echo "Use k to move!!"<CR>')
 vim.keymap.set("n", "<down>", '<cmd>echo "Use j to move!!"<CR>')
+-- vim.keymap.set("n", "w", "k")
+-- vim.keymap.set("n", "s", "j")
+-- vim.keymap.set("n", "a", "h")
+-- vim.keymap.set("n", "d", "l")
 
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
@@ -40,6 +44,6 @@ vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower win
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
 vim.keymap.set("n", "<C-a>", "ggVG")
-vim.keymap.set("n", "<C-S>", ":w<CR>")
+vim.keymap.set("n", "<C-s>", ":w<CR>")
 
 vim.api.nvim_create_user_command('Conf', 'edit $HOME/.config/nvim/init.lua', {bang = true})
