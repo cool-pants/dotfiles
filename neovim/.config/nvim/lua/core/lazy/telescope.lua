@@ -34,6 +34,15 @@ return {
             --   },
             -- },
             -- pickers = {}
+            defaults = {
+                file_ignore_patterns = {
+                    "node_modules",
+                    "venv",
+                    ".env",
+                    ".venv",
+                    "__pycache__"
+                }
+            },
             extensions = {
                 ["ui-select"] = {
                     require("telescope.themes").get_dropdown(),

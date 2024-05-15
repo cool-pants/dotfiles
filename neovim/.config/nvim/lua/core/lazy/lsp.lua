@@ -157,7 +157,23 @@ return { -- LSP Configuration & Plugins
                 root_dir = require('lspconfig').util.root_pattern("go.work", "go.mod", ".git"),
                 single_file_support = true
             },
-            -- pyright = {},
+            pyright = {
+                cmd = { "pyright-langserver", "--stdio" },
+                filetypes = {
+                    "python", "py"
+                },
+                settings = {
+                    python = {
+                        analysis = {
+                            autoSearchPaths = true,
+                            diagnosticMode = "openFilesOnly",
+                            useLibraryCodeForTypes = true
+                        }
+                    }
+                },
+                root_dir = require('lspconfig').util.root_pattern(".git"),
+                single_file_support = true
+            },
             -- rust_analyzer = {},
             -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
             --
@@ -174,9 +190,13 @@ return { -- LSP Configuration & Plugins
                 -- capabilities = {},
                 settings = {
                     Lua = {
+                        runtime = { version = "LuaJIT" },
                         completion = {
                             callSnippet = "Replace",
                         },
+                        diagnostics = {
+                            globals = { 'vim', 'it' }
+                        }
                         -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
                         -- diagnostics = { disable = { 'missing-fields' } },
                     },
