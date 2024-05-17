@@ -47,3 +47,29 @@ vim.keymap.set("n", "<C-a>", "ggVG")
 vim.keymap.set("n", "<C-s>", ":w<CR>")
 
 vim.api.nvim_create_user_command('Conf', 'edit $HOME/.config/nvim/init.lua', {bang = true})
+
+-- Keymap magic move stuff into indents
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+-- While Moving keep cursor in middle of page
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
+-- While searching keep cursor in middle of page
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
+
+-- Greatest remap ever: Paste while keeping the data in the zero buffer
+vim.keymap.set("x", "<leader>p", [["_dP]])
+
+-- next greatest remap ever : asbjornHaland Copy to +register
+vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set("n", "<leader>Y", [["+Y]])
+
+-- cool replace all occurances of word in file
+vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+vim.keymap.set("n", "<leader><leader>", function()
+    vim.cmd("so")
+end)
