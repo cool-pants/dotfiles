@@ -182,7 +182,7 @@ require("lazy").setup({
 		end,
 	},
 
-	{  -- LSP Configuration & Plugins
+	{ -- LSP Configuration & Plugins
 		"neovim/nvim-lspconfig",
 		dependencies = {
 			-- Automatically install LSPs and related tools to stdpath for Neovim
@@ -389,7 +389,7 @@ require("lazy").setup({
 					end,
 				},
 			})
-		end,-- LSP Configuration & Plugins
+		end, -- LSP Configuration & Plugins
 		"neovim/nvim-lspconfig",
 		dependencies = {
 			-- Automatically install LSPs and related tools to stdpath for Neovim
