@@ -46,7 +46,7 @@ vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper win
 vim.keymap.set("n", "<C-a>", "ggVG")
 vim.keymap.set("n", "<C-s>", ":w<CR>")
 
-vim.api.nvim_create_user_command('Conf', 'edit $HOME/.config/nvim/init.lua', {bang = true})
+vim.api.nvim_create_user_command("Conf", "edit $HOME/.config/nvim/init.lua", { bang = true })
 
 -- Keymap magic move stuff into indents
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -64,12 +64,12 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- next greatest remap ever : asbjornHaland Copy to +register
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 -- cool replace all occurances of word in file
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 vim.keymap.set("n", "<leader><leader>", function()
-    vim.cmd("so")
+	vim.cmd("so")
 end)
