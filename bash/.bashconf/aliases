@@ -8,6 +8,10 @@ alias nano='nvim'
 alias e='nvim'
 alias pyac='source $(pwd)/venv/bin/activate'
 
+# Navigation
+alias ..='cd ..'
+alias ....='cd ../..'
+
 # git
 alias g='git'
 alias gr='git remote'
