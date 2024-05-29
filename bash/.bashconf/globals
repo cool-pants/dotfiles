@@ -1,10 +1,11 @@
 PERSONAL=$HOME/personal
 WORK=$HOME/affinsys
 
+BUILDS_PATH=$PERSONAL/builds
 
 GO_PATH=$HOME/go/bin
-LUA_PATH=$HOME/personal/builds/lua-5.4.6/src
-LUA_5_1_PATH=$HOME/personal/builds/lua-5.1/src
-JAVA_HOME=$HOME/personal/builds/jdk-22.0.1/bin
+LUA_PATH=$BUILDS_PATH/lua-5.4.6/src
+LUA_5_1_PATH=$BUILDS_PATH/lua-5.1/src
+JAVA_HOME=$BUILDS_PATH/jdk-22.0.1/bin
 RUST_PATH=$HOME/.cargo/bin
-PATH=$PATH:$GO_PATH:$RUST_PATH:$JAVA_HOME:$LUA_PATH:$LUA_5_1_PATH
+PATH=$PATH:$GO_PATH:$RUST_PATH:$JAVA_HOME:$LUA_PATH:$LUA_5_1_PATH:$BUILDS_PATH
