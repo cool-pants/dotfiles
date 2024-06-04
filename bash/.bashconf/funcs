@@ -10,3 +10,7 @@ ginit() {
 gref() {
   git fetch origin main && git rebase origin/main
 }
+
+gupdate() {
+    git add . && git commit -m "feat: update module $1" && git push origin $2
+}
