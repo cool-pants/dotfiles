@@ -1,6 +1,7 @@
 # basic
 alias cls='clear'
-alias lla='ls -al'
+alias la='exa -al'
+alias lla='exa -al'
 alias vi='nvim'
 alias emacs='nvim'
 alias vim='nvim'
