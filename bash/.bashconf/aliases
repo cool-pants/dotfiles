@@ -26,3 +26,5 @@ alias grb='git rebase'
 # kubernetes
 alias k='kubectl'
 
+# Node
+alias cra='npx create-react-app'
