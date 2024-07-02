@@ -2,11 +2,18 @@
 alias cls='clear'
 alias la='exa -al'
 alias lla='exa -al'
+
+# Run from it hide from it
 alias vi='nvim'
+alias nv='nvim'
 alias emacs='nvim'
 alias vim='nvim'
 alias nano='nvim'
 alias e='nvim'
+alias gedit='nvim'
+alias code='nvim'
+# It always has been vim
+
 alias pyac='source $(pwd)/venv/bin/activate'
 alias back='cd -'
 
@@ -25,6 +32,7 @@ alias grb='git rebase'
 
 # kubernetes
 alias k='kubectl'
+alias k3='k3 kubectl'
 
 # Node
 alias cra='npx create-react-app'
