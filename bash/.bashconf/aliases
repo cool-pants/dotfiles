@@ -36,3 +36,7 @@ alias k3='k3 kubectl'
 
 # Node
 alias cra='npx create-react-app'
+
+# Package specific
+# Hyper charge cd with zoxide
+alias cd='z'
