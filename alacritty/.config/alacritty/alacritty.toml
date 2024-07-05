@@ -7,10 +7,10 @@ blur = true
 startup_mode = "Maximized"
 
 [font]
-normal = { family="FiraCodeNerdFont", style = "Regular" }
-bold = { family="FiraCodeNerdFont", style = "Bold" }
-italic = {family="FiraCodeNerdFont", style = "Light"}
-bold_italic = {family="FiraCodeNerdFont", style = "SemiBold"}
+normal = { family="GoMonoNerdFont", style = "Regular" }
+bold = { family="GoMonoNerdFont", style = "Bold" }
+italic = {family="CaskaydiaCoveNerdFont", style = "Medium Italic"}
+bold_italic = {family="VictorMonoNF", style = "Bold Italic"}
 size = 11
 
 [colors.primary]
