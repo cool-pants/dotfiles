@@ -14,3 +14,12 @@ gref() {
 gupdate() {
     git add . && git commit -m "feat: update module $1" && git push origin $2
 }
+
+# list dir
+lx() {
+    exa -as name *$1
+}
+
+llx() {
+    exa -als name *$1
+}
