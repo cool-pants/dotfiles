@@ -4,3 +4,5 @@
     path = /home/mainak/.gitconfig.personal
 [init]
 	defaultBranch = main
+[core]
+    editor = 'nvim'
