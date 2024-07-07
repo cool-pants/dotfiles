@@ -40,3 +40,6 @@ alias cra='npx create-react-app'
 # Package specific
 # Hyper charge cd with zoxide
 alias cd='z'
+
+# For fonts to work in tmux
+alias tmux="TERM=$TERM tmux"
