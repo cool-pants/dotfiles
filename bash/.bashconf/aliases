@@ -12,6 +12,8 @@ alias nano='nvim'
 alias e='nvim'
 alias gedit='nvim'
 alias code='nvim'
+# Extremely common typo
+alias nivm="nvim"
 # It always has been vim
 
 alias pyac='source $(pwd)/venv/bin/activate'
