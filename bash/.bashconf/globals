@@ -3,12 +3,14 @@ WORK=$HOME/affinsys
 
 BUILDS_PATH=$PERSONAL/builds
 
-GO_PATH=$HOME/go/bin
-GOROOT=$HOME/go
-GOPATH=$GO_PATH
-LUA_PATH=$BUILDS_PATH/lua-5.4.6/src
-LUA_5_1_PATH=$BUILDS_PATH/lua-5.1/src;
-JAVA_HOME=$BUILDS_PATH/jdk-22.0.1/bin;
-MAVEN_HOME=$BUILDS_PATH/apache-maven-3.9.8/bin;
-RUST_PATH=$HOME/.cargo/bin
-PATH=$PATH:$GO_PATH:$RUST_PATH:$JAVA_HOME:$LUA_PATH:$LUA_5_1_PATH:$BUILDS_PATH:$MAVEN_HOME
+export GO_PATH=$HOME/go/bin
+export GOROOT=$HOME/go
+export GOPATH=$GO_PATH
+export LUA_PATH=$BUILDS_PATH/lua-5.4.6/src
+export LUA_5_1_PATH=$BUILDS_PATH/lua-5.1/src;
+export JAVA_HOME=$BUILDS_PATH/jdk-22.0.1/bin;
+export MAVEN_HOME=$BUILDS_PATH/apache-maven-3.9.8/bin;
+export RUST_PATH=$HOME/.cargo/bin
+export PATH=$PATH:$GO_PATH:$RUST_PATH:$JAVA_HOME:$LUA_PATH:$LUA_5_1_PATH:$BUILDS_PATH:$MAVEN_HOME
+
+export DOTPATH=$HOME/personal/dotfiles/
