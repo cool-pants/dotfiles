@@ -1,24 +1,16 @@
 #!/bin/bash
 
-if [[ -z "${DOTPATH}" ]]; then
-    echo "please set the env DOTPATH={path/to/dotfiles} before running this command"
-    exit
-fi
+check() {
+    if which $1 &> /dev/null; then
+        echo "" &> /dev/null
+    else
+        echo "$1 Not present, please ensure installed before running this script"
+        exit
+    fi
+}
 
-if [ $# -eq 0 ]; then
-    echo "please provide the directory to configure..."
-    exit
-fi
+check stow
 
-if [ ! -d "$1" ]; then
-    echo "directory does not exist"
-    exit
-fi
-
-# Check if the directory set has configs inside of .config
-if [ -d "$1/.config/$1" ]; then
-    echo "directory is a .config directory"
-    ln -sf "${DOTPATH}$1/.config/$1" "${HOME}/.config/"
-fi
+stow --target=$HOME $1
 
 echo "finished"
