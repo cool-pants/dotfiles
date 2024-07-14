@@ -32,6 +32,24 @@ if ! check stow ; then
     fi
 fi
 
-stow --target=$HOME $1
+ALL_CONFIGS="alacritty
+zsh
+bash
+git
+nvim
+tmux"
+
+
+case "$1" in
+    all)
+        for value in $ALL_CONFIGS; do
+            echo "stowing $value ..."
+            stow --target=$HOME $value
+        done
+        ;;
+    *)
+        stow --target=$HOME $1
+        ;;
+esac
 
 echo "finished"
