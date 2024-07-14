@@ -1,15 +1,36 @@
-#!/bin/bash
+#!/bin/sh
+
 
 check() {
-    if which $1 &> /dev/null; then
-        echo "" &> /dev/null
-    else
-        echo "$1 Not present, please ensure installed before running this script"
-        exit
-    fi
+    command -v "$1" &> /dev/null
 }
 
-check stow
+# Install stow if not present; else install
+if ! check stow ; then
+    if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+        # Detect the package manager and install GNU Stow
+        if [ -f /etc/debian_version ]; then
+            # For Debian-based distributions
+            sudo apt update
+            sudo apt install -y stow
+        elif [ -f /etc/redhat-release ]; then
+            # For Red Hat-based distributions
+            sudo yum install -y stow
+        else
+            echo "Unsupported Linux distribution."
+            exit 1
+        fi
+    elif [[ "$OSTYPE" == "darwin"* ]]; then
+        brew install stow -y
+    fi
+
+    # Verify the Stow install
+    if check stow; then
+        echo "Stow succesfully installed"
+    else
+        echo "Stow failed to install"
+    fi
+fi
 
 stow --target=$HOME $1
 
