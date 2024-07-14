@@ -10,8 +10,8 @@ case $- in
 esac
 
 load() {  
-	if [ -f ~/.bashconf/$1 ]; then
-		source ~/.bashconf/$1
+	if [ -f ~/$1 ]; then
+		source ~/$1
 	fi
 }
 
