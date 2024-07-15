@@ -1,0 +1,64 @@
+#:schema https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
+
+version = 2
+final_space = true
+console_title_template = '{{ .Shell }} in {{ .Folder }}'
+
+[[blocks]]
+    type="prompt"
+    alignment = 'left'
+
+    [[blocks.segments]]
+        foreground="p:os"
+        style="plain"
+        template="{{ .Icon }} "
+        type="os"
+
+    [[blocks.segments]]
+        foreground="p:blue"
+        style="plain"
+        template="{{.UserName}}@{{.HostName}} "
+        type="session"
+
+    [[blocks.segments]]
+        type="path"
+        style="plain"
+        foreground="p:pink"
+        template="{{ .Path }} "
+
+        [blocks.segments.properties]
+            style='folder'
+
+
+    [[blocks.segments]]
+        type = "git"
+        style = "plain"
+        foreground = "magenta"
+        template = "{{ .HEAD }} [{{if .Working.Changed}}!{{end}}{{if .Staging.Changed}}+{{end}}{{if gt .Working.Untracked 0}}?{{end}}]"
+
+        [blocks.segments.properties]
+            fetch_status = true
+            fetch_upstream_icon = true
+
+[[blocks]]
+    type="prompt"
+    alignment="left"
+    newline=true
+
+    [[blocks.segments]]
+        type="text"
+        style="plain"
+        foreground_templates = [
+            "{{if gt .Code 0}}red{{end}}",
+            "{{if eq .Code 0}}magenta{{end}}"
+        ]
+        template="\u276f"
+        foreground="blue"
+
+
+[palette]
+    os="#ACB0BE"
+    closer="p:os"
+    pink="#F5BDE6"
+    lavender="#B7BDF8"
+    blue= "#8AADF4"
