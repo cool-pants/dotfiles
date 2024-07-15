@@ -47,7 +47,13 @@ load globals
 load aliases
 load funcs
 
-eval "$(starship init zsh)"
+
+if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
+    eval "$(oh-my-posh init bash)"
+fi
+
+eval "$(oh-my-posh init bash --config $HOME/.config/omp/min.toml)"
+# eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
 export NVM_DIR="$HOME/.nvm"
