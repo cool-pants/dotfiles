@@ -49,10 +49,9 @@ load funcs
 
 
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
-    eval "$(oh-my-posh init bash)"
+    eval "$(oh-my-posh init zsh --config $HOME/.config/omp/min.toml)"
 fi
 
-eval "$(oh-my-posh init bash --config $HOME/.config/omp/min.toml)"
 # eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
