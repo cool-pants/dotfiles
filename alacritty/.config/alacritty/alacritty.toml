@@ -1,6 +1,7 @@
 import = [
     "~/.config/alacritty/catppuccin-mocha.toml",
 ]
+live_config_reload = true
 
 [env]
 TERM = "xterm-256color"
@@ -18,5 +19,7 @@ normal = { family="GoMonoNerdFont", style = "Regular" }
 bold = { family="GoMonoNerdFont", style = "Bold" }
 italic = {family="CaskaydiaCoveNerdFont", style = "Medium Italic"}
 bold_italic = {family="VictorMonoNF", style = "Bold Italic"}
-size = 11
+size = 18
 
+[shell]
+program = "/bin/zsh"
