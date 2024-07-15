@@ -7,3 +7,7 @@
 
 [core]
 	sshCommand = /usr/bin/ssh -i /home/mainak/.ssh/affinsys
+[gpg]
+	program = gpg2
+[commit]
+    gpgsign = true
