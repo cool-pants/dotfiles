@@ -127,7 +127,11 @@ load globals
 load funcs
 load aliases
 
-eval "$(starship init bash)"
+if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
+    eval "$(oh-my-posh init bash)"
+fi
+
+eval "$(oh-my-posh init bash --config $HOME/.config/omp/min.toml)"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
