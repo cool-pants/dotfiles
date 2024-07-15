@@ -23,8 +23,8 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
     [[blocks.segments]]
         type="path"
         style="plain"
-        foreground="p:pink"
-        template="{{ .Path }} "
+        foreground="green"
+        template="<b>{{ .Path }} </b>"
 
         [blocks.segments.properties]
             style='folder'
@@ -34,11 +34,37 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
         type = "git"
         style = "plain"
         foreground = "magenta"
-        template = "{{ .HEAD }} [{{if .Working.Changed}}!{{end}}{{if .Staging.Changed}}+{{end}}{{if gt .Working.Untracked 0}}?{{end}}]"
+        template = "<b>{{ .HEAD }} {{if or (gt .StashCount 0) (.Working.Changed) (.Staging.Changed)}}<red>[{{if gt .StashCount 0}}\\${{end}}{{if gt .Working.Deleted 0}}✘{{end}}{{if or (gt .Working.Added 0) (gt .Working.Modified 0)}}!{{end}}{{if .Staging.Changed}}+{{end}}{{if gt .Working.Untracked 0}}?{{end}}{{if gt .Ahead 0}}⇡{{end}}]</>{{end}}</b>"
 
         [blocks.segments.properties]
             fetch_status = true
             fetch_upstream_icon = true
+
+    [[blocks.segments]]
+        foreground="green"
+        style="plain"
+        template="<white> via </> {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }}"
+        type="node"
+        [blocks.segments.properties]
+            fetch_package_manager=false
+
+    [[blocks.segments]]
+        foreground="yellow"
+        style="plain"
+        template="<white> via </> {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}"
+        type="python"
+
+    [[blocks.segments]]
+        foreground="blue"
+        style="plain"
+        template="<white> via </> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}"
+        type="go"
+
+
+    [[blocks.segments]]
+        template="<white> via </> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}"
+        style="plain"
+        type="lua"
 
 [[blocks]]
     type="prompt"
