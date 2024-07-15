@@ -71,11 +71,24 @@ for val in $ensure_installed; do
     check $val
 done
 
-setup_ssh "personal"
-setup_dotfiles
+case "$1" in
+    all)
+        setup_ssh "personal"
+        setup_dotfiles
 
-for val in $dotfiles_list; do
-    stow_file $val
-done
+        for val in $dotfiles_list; do
+            stow_file $val
+        done
+        ;;
+    ssh)
+        setup_ssh "personal"
+        ;;
+    pull)
+        setup_dotfiles
+        ;;
+    *)
+        echo "Invalid option!"
+        ;;
+esac
 
 echo "Finished setup"
