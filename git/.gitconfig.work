@@ -1,6 +1,7 @@
 [user]
 	name = mainak
 	email = mainak.sengupta@affinsys.com
+    signingkey = B3D38797F5BA8AB8E68DCF8E199CE8E725AA209F
 
 [default]
 	branchName = main
