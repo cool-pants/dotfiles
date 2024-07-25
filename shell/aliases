@@ -44,4 +44,4 @@ alias cra='npx create-react-app'
 alias cd='z'
 
 # For fonts to work in tmux
-alias tmux="TERM=$TERM tmux"
+alias tmux="TERM=$TERM tmux -u"
