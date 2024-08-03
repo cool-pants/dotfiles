@@ -4,6 +4,7 @@ WORK=$HOME/affinsys
 BUILDS_PATH=$PERSONAL/builds
 
 export GO_PATH=/usr/local/go/bin
+export GOPATH=/home/mainak/go/
 export LUA_PATH=$BUILDS_PATH/lua-5.4.6/src
 export LUA_5_1_PATH=$BUILDS_PATH/lua-5.1/src;
 export JAVA_HOME=$BUILDS_PATH/jdk-22.0.1/bin;
@@ -11,6 +12,6 @@ export MAVEN_HOME=$BUILDS_PATH/apache-maven-3.9.8/bin;
 export RUST_PATH=$HOME/.cargo/bin
 export FZF_PATH=$HOME/.fzf/bin
 export KITTY_PATH=$HOME/.local/kitty.app/bin
-export PATH=$PATH:$GO_PATH:$RUST_PATH:$JAVA_HOME:$LUA_PATH:$LUA_5_1_PATH:$BUILDS_PATH:$MAVEN_HOME:$FZF_PATH:$KITTY_PATH
+export PATH=$PATH:$GO_PATH:$RUST_PATH:$JAVA_HOME:$LUA_PATH:$LUA_5_1_PATH:$BUILDS_PATH:$MAVEN_HOME:$FZF_PATH:$KITTY_PATH:$GOPATH/bin
 
 export DOTPATH=$HOME/personal/dotfiles/
