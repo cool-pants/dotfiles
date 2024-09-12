@@ -1,1 +1,4 @@
 */.config/*/plugins/*
+
+.DS_STORE
+*/.DS_STORE

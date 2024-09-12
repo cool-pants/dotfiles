@@ -2,8 +2,8 @@
 alias cls='clear'
 alias cl='clear'
 alias scl='clear'
-alias la='exa -al'
-alias lla='exa -al'
+alias la='eza -al'
+alias lla='eza -al'
 
 # Run from it hide from it
 alias vi='nvim'

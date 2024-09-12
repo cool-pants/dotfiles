@@ -3,8 +3,8 @@ WORK=$HOME/affinsys
 
 BUILDS_PATH=$PERSONAL/builds
 
-export GO_PATH=/usr/local/go/bin
-export GOPATH=/home/mainak/go/
+export GO_PATH=/opt/homebrew/opt/go@1.22/bin
+export GOPATH=$HOME/go
 export LUA_PATH=$BUILDS_PATH/lua-5.4.6/src
 export LUA_5_1_PATH=$BUILDS_PATH/lua-5.1/src;
 export JAVA_HOME=$BUILDS_PATH/jdk-22.0.1/bin;

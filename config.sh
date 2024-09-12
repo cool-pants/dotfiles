@@ -34,7 +34,6 @@ fi
 
 ALL_CONFIGS="alacritty
 zsh
-bash
 git
 nvim
 tmux"

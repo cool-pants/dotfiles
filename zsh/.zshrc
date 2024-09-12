@@ -3,6 +3,17 @@ load() {
 		source ~/$1
 	fi
 }
+
+unameOut="$(uname -s)"
+case "${unameOut}" in
+	Linux*) machine=Linux
+	;;
+	Darwin*) machine=Mac
+	;;
+	*) echo machine="UNKNOWN:${unameOut}"
+	;;
+esac
+
 # Set up the prompt
 
 if [ ! -d "${ZDOTDIR:-$HOME}/.antidote" ]; then
@@ -30,7 +41,9 @@ zstyle ':completion:*' completer _expand _complete _correct _approximate
 zstyle ':completion:*' format 'Completing %d'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' menu select=2
-eval "$(dircolors -b)"
+if [ "$machine" != "Mac" ]; then
+    eval "$(dircolors -b)"
+fi
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
@@ -47,6 +60,8 @@ load globals
 load aliases
 load funcs
 
+load .zshrc_company
+
 
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
     eval "$(oh-my-posh init zsh --config $HOME/.config/omp/min.toml)"
@@ -57,8 +72,10 @@ eval "$(zoxide init zsh)"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/zsh_completion" ] && \. "$NVM_DIR/zsh_completion"
 
 source <(fzf --zsh)
 
 source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 antidote load ${ZDOTDIR:-$HOME}/.zsh_plugins.txt
+export PATH=":$PATH"
